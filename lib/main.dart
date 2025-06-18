@@ -1,8 +1,5 @@
 abstract class Shape {
-  // Abstract method
   void area();
-
-  // Regular method
   void display() {
     print("Calculating area of the shape");
   }
