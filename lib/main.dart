@@ -1,31 +1,46 @@
-void main(){
-  var OBJ= BankAccount(1000);
-  OBJ.deposit(500);
-  OBJ.withdraw(400);
-  print(OBJ.getBalance());
-}
-class BankAccount {
-  double _balance;
+abstract class Shape {
+  // Abstract method
+  void area();
 
-  BankAccount(this._balance);
-
-
-  void deposit(amount) {
-    if (amount > 0) {
-      _balance += amount;
-      print("deposit amount $amount");
-    }
-  }
-
-  void withdraw(amount) {
-    if (amount > 0 && amount <= _balance) {
-      _balance -= amount;
-      print("withdraw amount $amount");
-    }
-  }
-
-  double getBalance() {
-    return _balance;
+  // Regular method
+  void display() {
+    print("Calculating area of the shape");
   }
 }
 
+class Rectangle extends Shape {
+  double length;
+  double width;
+
+  Rectangle(this.length, this.width);
+
+  @override
+  void area() {
+    print("Area of rectangle: ${length * width}");
+  }
+}
+
+class Circle extends Shape {
+  double radius;
+
+  Circle(this.radius);
+
+  @override
+  void area() {
+    print("Area of circle: ${3.14 * radius * radius}");
+  }
+}
+
+void main() {
+  // Create Rectangle and Circle objects
+  Rectangle rectangle = Rectangle(5, 10);
+  Circle circle = Circle(5);
+
+  // Call methods on Rectangle
+  rectangle.display();
+  rectangle.area();
+
+  // Call methods on Circle
+  circle.display();
+  circle.area();
+}
