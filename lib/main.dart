@@ -17,7 +17,7 @@ class CounterApp extends StatelessWidget {
         scaffoldBackgroundColor:Colors.purple,
         textTheme: const TextTheme(
           headlineMedium: TextStyle(
-            fontSize: 40,
+            fontSize: 41,
             fontWeight: FontWeight.bold,
             color: Colors.teal,
           ),
